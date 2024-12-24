@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.count {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 8em;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons button {
+    margin: 0 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3497e2;
+    color: white;
+    font-size: 2em;
+}
+
+.buttons button:hover {
+    background-color: #2a80b9;
+} 
