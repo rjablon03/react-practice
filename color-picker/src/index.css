@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.color-box {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.hex-code {
+    font-size: 2em;
+}
