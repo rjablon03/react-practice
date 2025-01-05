@@ -6,17 +6,17 @@ function ToDoList() {
 
     const handleNewTask = (e) => {
         setNewTask(e.target.value);
-    }
+    };
 
     const addNewTask = () => {
-        if (taskList.length === 0) {
-            document.querySelector(".default-message").style.display = "none";
-        }
-
         setTaskList([...taskList, newTask]);
         setNewTask("");
         document.querySelector(".create-task input").value = "";
-    }
+    };
+
+    const removeTask = (index) => {
+        setTaskList(taskList.filter((_, i) => i !== index));
+    };
 
     return (
         <div className="container">
@@ -24,16 +24,15 @@ function ToDoList() {
 
             <div className="create-task">
                 <input type="text" placeholder="Enter a new task" onChange={handleNewTask}/>
-                <button onClick={addNewTask}>Add</button>
+                <button className="add-btn" onClick={addNewTask}>Add</button>
             </div>
 
             <div className="task-list">
-                <p className="default-message">You have no tasks</p>
                 {taskList.map((task, index) => {
                     return (
                         <div key={index} className="task">
-                            <input type="checkbox"/>
-                            <span>{task}</span>
+                            <p>{task}</p>
+                            <button className="complete-btn" onClick={() => removeTask(index)}>Complete</button>
                         </div>
                     );
                 })}
